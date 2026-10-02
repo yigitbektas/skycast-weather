@@ -2,6 +2,10 @@ import requests
 import tkinter as tk
 from tkinter import messagebox
 import base64
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 BG  ="#a8d4f5"
@@ -10,7 +14,7 @@ TEXT_DARK  = "#1a4d7a"
 ENTRY_BG   = "#daeefb"
 BORDER     = "#90c4e8"
 FAV_BG = "#7cb9f7"
-API_KEY = "c6f1ccb36bb11f712321add99d6a954c"
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 def get_weather_emoji(weather_main):
     weather_main = weather_main.lower()
